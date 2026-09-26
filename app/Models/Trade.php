@@ -30,6 +30,7 @@ class Trade extends Model
         'closed_at',
         'status',
         'comment',
+        'screenshot_note',
     ];
 
     protected $casts = [

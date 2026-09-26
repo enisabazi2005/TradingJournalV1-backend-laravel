@@ -83,6 +83,18 @@ Route::delete(
 );
 
 
+Route::put(
+    '/trades/{trade}/note',
+    [InternalTradeScreenshotController::class, 'update']
+);
+ 
+Route::delete(
+    '/trades/{trade}/note',
+    [InternalTradeScreenshotController::class, 'destroy']
+);
+ 
+
+
 /*
 |--------------------------------------------------------------------------
 | Internal MT5 synchronization

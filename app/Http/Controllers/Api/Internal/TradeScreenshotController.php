@@ -147,4 +147,38 @@ class TradeScreenshotController extends Controller
             'screenshot_id' => $screenshot?->id,
         ]);
     }
+
+    public function update(Request $request, Trade $trade): JsonResponse
+    {
+        $validated = $request->validate([
+            'note' => ['nullable', 'string', 'max:5000'],
+        ]);
+ 
+        $note = trim((string) ($validated['note'] ?? ''));
+ 
+        $trade->update([
+            'screenshot_note' => $note !== '' ? $note : null,
+        ]);
+ 
+        return response()->json([
+            'message' => 'Trade note saved.',
+            'trade_id' => $trade->id,
+            'note' => $trade->screenshot_note,
+        ]);
+    }
+ 
+    /**
+     * Delete the note for a trade entirely.
+     */
+    public function destroy(Trade $trade): JsonResponse
+    {
+        $trade->update([
+            'screenshot_note' => null,
+        ]);
+ 
+        return response()->json([
+            'message' => 'Trade note deleted.',
+            'trade_id' => $trade->id,
+        ]);
+    }
 }
