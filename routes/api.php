@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\Internal\Mt5SyncController as InternalMt5SyncContro
 use App\Http\Controllers\Api\Internal\TradeScreenshotController as InternalTradeScreenshotController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\LiveController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\NewsletterSubscriberController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TradeJournalController;
 use App\Http\Controllers\TradeScreenshotController;
@@ -91,6 +93,38 @@ Route::put(
 Route::delete(
     '/trades/{trade}/note',
     [InternalTradeScreenshotController::class, 'destroy']
+);
+ 
+
+
+Route::get(
+    '/newsletter/subscribers',
+    [NewsletterSubscriberController::class, 'index']
+);
+ 
+Route::post(
+    '/newsletter/subscribers',
+    [NewsletterSubscriberController::class, 'store']
+);
+ 
+Route::put(
+    '/newsletter/subscribers/{subscriber}',
+    [NewsletterSubscriberController::class, 'update']
+);
+ 
+Route::delete(
+    '/newsletter/subscribers/{subscriber}',
+    [NewsletterSubscriberController::class, 'destroy']
+);
+ 
+Route::post(
+    '/newsletter/upload-image',
+    [NewsletterController::class, 'uploadImage']
+);
+ 
+Route::post(
+    '/newsletter/send',
+    [NewsletterController::class, 'send']
 );
  
 
