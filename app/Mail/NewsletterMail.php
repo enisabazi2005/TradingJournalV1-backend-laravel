@@ -44,21 +44,24 @@ class NewsletterMail extends Mailable
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{$subject}</title>
 </head>
-<body style="margin:0; padding:0; background-color:#0d0f14; -webkit-text-size-adjust:100%;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#0d0f14; padding:32px 16px;">
+<body style="margin:0; padding:0; background-color:#08090e; -webkit-text-size-adjust:100%;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#08090e" style="background-color:#08090e; border-collapse:collapse;">
 <tr>
-<td align="center">
-<table role="presentation" width="100%" style="max-width:600px;" cellpadding="0" cellspacing="0">
+<td align="center" style="padding:48px 16px;">
+<!--[if mso]>
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td>
+<![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0d1017" style="width:100%; max-width:600px; background-color:#0d1017; border:1px solid #30323b; border-top:2px solid #3fe0ff; border-collapse:separate; border-spacing:0; box-shadow:0 0 44px #f0b42914;">
 
   <!-- Brand -->
   <tr>
-    <td style="padding:0 4px 20px;">
-      <table role="presentation" cellpadding="0" cellspacing="0">
+    <td style="padding:24px 28px; border-bottom:1px solid #282b34;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
         <tr>
-          <td style="width:30px; height:30px; border-radius:8px; background-color:#f0b429; text-align:center; vertical-align:middle; font-family:Georgia,'Times New Roman',serif; font-weight:700; color:#0d0f14; font-size:14px;">
+          <td width="36" height="36" align="center" valign="middle" bgcolor="#f0b429" style="width:36px; height:36px; background-color:#f0b429; font-family:'Courier New',Courier,monospace; font-weight:700; color:#0a0c11; font-size:17px; line-height:36px;">
             T
           </td>
-          <td style="padding-left:10px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:13px; font-weight:700; color:#e2e4e9; letter-spacing:0.02em;">
+          <td style="padding-left:14px; font-family:Arial,Helvetica,sans-serif; font-size:15px; font-weight:700; color:#f4f5f8;">
             TradeJournal
           </td>
         </tr>
@@ -66,44 +69,42 @@ class NewsletterMail extends Mailable
     </td>
   </tr>
 
-  <!-- Card -->
+  <!-- Accent -->
   <tr>
-    <td style="background-color:#ffffff; border-radius:14px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-
-        <!-- Accent bar -->
-        <tr>
-          <td style="height:3px; background-color:#f0b429; border-radius:14px 14px 0 0;"></td>
-        </tr>
-
-        <!-- Subject -->
-        <tr>
-          <td style="padding:28px 32px 8px;">
-            <h1 style="margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:20px; font-weight:700; color:#15171c; letter-spacing:-0.01em;">
-              {$subject}
-            </h1>
-          </td>
-        </tr>
-
-        <!-- Body -->
-        <tr>
-          <td style="padding:12px 32px 32px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:14.5px; line-height:1.7; color:#2a2d34;">
-            {$body}
-          </td>
-        </tr>
-
+    <td style="padding:32px 28px 24px;">
+      <table role="presentation" width="40" cellpadding="0" cellspacing="0" border="0" style="width:40px; border-collapse:collapse;">
+        <tr><td height="3" bgcolor="#f0b429" style="height:3px; line-height:3px; font-size:0; background-color:#f0b429;">&nbsp;</td></tr>
       </table>
+    </td>
+  </tr>
+
+  <!-- Subject -->
+  <tr>
+    <td style="padding:0 28px 20px;">
+      <h1 style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:27px; line-height:1.25; font-weight:700; color:#f4f5f8; overflow-wrap:anywhere; word-wrap:break-word;">
+        {$subject}
+      </h1>
+    </td>
+  </tr>
+
+  <!-- Body -->
+  <tr>
+    <td style="padding:0 28px 36px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.75; color:#c4c7cf; overflow-wrap:anywhere; word-wrap:break-word;">
+      {$body}
     </td>
   </tr>
 
   <!-- Footer -->
   <tr>
-    <td style="padding:20px 8px 0; text-align:center; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:11px; color:#6c7178;">
+    <td style="padding:22px 28px; border-top:1px solid #282b34; font-family:'Courier New',Courier,monospace; font-size:12px; line-height:1.65; color:#969ca8;">
       You're receiving this because you're subscribed to the TradeJournal newsletter.
     </td>
   </tr>
 
 </table>
+<!--[if mso]>
+</td></tr></table>
+<![endif]-->
 </td>
 </tr>
 </table>
